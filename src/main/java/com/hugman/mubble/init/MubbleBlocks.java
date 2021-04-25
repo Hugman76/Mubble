@@ -18,6 +18,7 @@ import com.hugman.mubble.object.block.*;
 import com.hugman.mubble.object.block.block_entity.LootablePunchBlockEntity;
 import com.hugman.mubble.object.block.block_entity.PlacerBlockEntity;
 import com.hugman.mubble.object.block.block_entity.PresentBlockEntity;
+import com.hugman.mubble.object.block.block_entity.WarpPipeBlockEntity;
 import com.hugman.mubble.object.block.block_state_property.FluidLog;
 import com.hugman.mubble.object.block.block_state_property.Princess;
 import com.hugman.mubble.object.block.sapling_generator.PinkPressGardenSaplingGenerator;
@@ -75,6 +76,11 @@ public class MubbleBlocks extends MubblePack {
 	public static final Block TIMESWAP_TABLE = register(new BlockCreator.Builder("timeswap_table", new TimeswapTableBlock(FabricBlockSettings.of(Material.STONE).hardness(3.5F))).itemGroup(ItemGroup.DECORATIONS));
 	public static final ScreenHandlerType<TimeswapTableScreenHandler> TIMESWAP_TABLE_SCREEN_HANDLER = register(new ScreenHandlerCreator.Builder<>("timeswap_table", TimeswapTableScreenHandler::new));
 	/* SUPER MARIO (MAKER) */
+	public static final Block SMB_WARP_PIPE = register(new BlockCreator.Builder("smb_warp_pipe", new WarpPipeBlock(FabricBlockSettings.copy(Blocks.STONE))).itemGroup(ItemGroup.BUILDING_BLOCKS));
+	public static final Block SMB3_WARP_PIPE = register(new BlockCreator.Builder("smb3_warp_pipe", new WarpPipeBlock(FabricBlockSettings.copy(Blocks.STONE))).itemGroup(ItemGroup.BUILDING_BLOCKS));
+	public static final Block SMW_WARP_PIPE = register(new BlockCreator.Builder("smw_warp_pipe", new WarpPipeBlock(FabricBlockSettings.copy(Blocks.STONE))).itemGroup(ItemGroup.BUILDING_BLOCKS));
+	public static final Block NSMBU_WARP_PIPE = register(new BlockCreator.Builder("nsmbu_warp_pipe", new WarpPipeBlock(FabricBlockSettings.copy(Blocks.STONE))).itemGroup(ItemGroup.BUILDING_BLOCKS));
+	public static final BlockEntityType<WarpPipeBlockEntity> WARP_PIPE_ENTITY = register(new BlockEntityCreator.Builder<>("warp_pipe", BlockEntityType.Builder.create(WarpPipeBlockEntity::new, MubbleBlocks.SMB_WARP_PIPE, SMB3_WARP_PIPE, SMB_WARP_PIPE, NSMBU_WARP_PIPE)));
 	public static final Block SMB_EMPTY_BLOCK = register(new BlockCreator.Builder("smb_empty_block", new EmptyBlock(MubbleSounds.BLOCK_EMPTY_BLOCK_HIT_SMB, Settings.QUESTION_BLOCK)).itemGroup(ItemGroup.BUILDING_BLOCKS));
 	public static final Block SMB3_EMPTY_BLOCK = register(new BlockCreator.Builder("smb3_empty_block", new EmptyBlock(MubbleSounds.BLOCK_EMPTY_BLOCK_HIT_SMB3, Settings.QUESTION_BLOCK)).itemGroup(ItemGroup.BUILDING_BLOCKS));
 	public static final Block SMW_EMPTY_BLOCK = register(new BlockCreator.Builder("smw_empty_block", new EmptyBlock(MubbleSounds.BLOCK_EMPTY_BLOCK_HIT_SMW, Settings.QUESTION_BLOCK)).itemGroup(ItemGroup.BUILDING_BLOCKS));
